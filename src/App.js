@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Home from './Components/Home/Home/Home';
 import Appointment from './Components/Appointment/Appointment/Appointment';
-import Login from './Components/Login/Login/Login';
+import NoFound from './Components/Home/NoFound/NoFound';
 
 
 
@@ -29,9 +29,9 @@ function App() {
           <Route path="/appointment">
             <Appointment></Appointment>
           </Route>
-          {/* <Route path="/login">
-            <Login></Login>
-          </Route> */}
+          <Route path="/blog">
+            <NoFound/>
+          </Route>
         </Switch>
      </Router>
     </UserContext.Provider>

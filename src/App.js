@@ -32,6 +32,9 @@ function App() {
           <Route path="/blog">
             <NoFound/>
           </Route>
+          <Route path="*">
+            <NoFound/>
+          </Route>
         </Switch>
      </Router>
     </UserContext.Provider>

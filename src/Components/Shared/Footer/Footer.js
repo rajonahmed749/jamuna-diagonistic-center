@@ -6,34 +6,34 @@ import "./Footer.css"
 
 const Footer = () => {
     const noNamed = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
-        {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
+        {name: "Emergency Dental Care" },
+        {name: "Check Up" },
+        {name: "Treatment of Personal Diseases" },
+        {name: "Tooth Extraction" },
+        {name: "Check Up" },
     ]
     const ourAddress = [
-        {name: "New York - 101010 Hudson" , link: "//google.com/map"},
-        {name: "Yards" , link: "//google.com/map"},
+        {name: "New York - 101010 Hudson" ,link: "/"},
+        {name: "Yards",link: "/"},
        
     ]
     const oralHealth = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
-        {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
+        {name: "Emergency Dental Care",link: "/"},
+        {name: "Check Up"},
+        {name: "Treatment of Personal Diseases",link: "/"},
+        {name: "Tooth Extraction",link: "/"},
+        {name: "Check Up",link: "/"},
+        {name: "Check Up",link: "/"},
+        {name: "Check Up",link: "/"}
     ]
     const services = [
-        {name: "Emergency Dental Care" , link: "/emergency"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Treatment of Personal Diseases" , link: "/personal-treatment"},
-        {name: "Tooth Extraction" , link: "/tooth-extract"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"},
-        {name: "Check Up" , link: "/checkup"}
+        {name: "Emergency Dental Care" ,link: "/"},
+        {name: "Check Up" },
+        {name: "Treatment of Personal Diseases" ,link: "/"},
+        {name: "Tooth Extraction" ,link: "/"},
+        {name: "Check Up" ,link: "/"},
+        {name: "Check Up"  ,link: "/"},
+        {name: "Check Up" ,link: "/"}
     ]
     return (
         <footer className="footer-area clear-both">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./Appointment.css"
 import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
 import AppointmentHeader from '../AppointmentHeader/AppointmentHeader';

@@ -37,16 +37,16 @@ const Dashboard = () => {
                 <Navbar/>
             </div>
             <div style={containerStyle} className="container-fluid row mt-5">
-                <div className="col-md-2">
+                <div className="col-md-2 mt-5">
                     <Sidebar></Sidebar>
                 </div>
-                <div className="col-md-5 d-flex justify-content-center">
+                <div className="col-md-5 d-flex justify-content-center mt-5">
                 <Calendar
                     // onChange={handleDateChange}
                     value={new Date()}
                 />
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5 mt-5">
                     {/* <AppointmentsByDate appointments={appointments}></AppointmentsByDate> */}
                 </div>
             </div>

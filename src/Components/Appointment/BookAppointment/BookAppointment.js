@@ -51,7 +51,7 @@ const BookAppointment = ({date}) => {
     return (
         <section>
             <h2 className="text-center text-brand mb-5">Available Appointment on {date.toDateString()} </h2>  
-            <div className="row">
+            <div className="row justify-content-center">
                 {
                     bookingData.map(booking => <BookingCard booking={booking}  date={date} key={booking.id}></BookingCard>)
                 }

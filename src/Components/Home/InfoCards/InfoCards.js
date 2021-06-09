@@ -6,7 +6,7 @@ const InfoCards = ({info}) => {
     return (
         <div className="col-md-4 text-white info-card">
             <div className={`d-flex justify-content-between info-container info-${info.background}`}>
-                <div className="ms-3">
+                <div className="ms-4">
                 <FontAwesomeIcon className="info-icon" icon={info.icon} />                    
                 </div>
                 <div>

@@ -13,3 +13,18 @@
   font-weight: 600;
   color: white;
 }
+.doctorImg{
+  width: 200px;
+  height: 250px;
+}
+.login-page .form-control{
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid lightgray;
+  padding-right: 0;
+  padding-left: 0;
+}
+.login-page .form-control:focus{
+  box-shadow: none !important;
+  border-bottom: 1px solid #1cc7c1;
+}

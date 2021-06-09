@@ -1,17 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+const goBack = () => window.history.back();
 
 const NoFound = () => {
     return (
         <div>
-            <div className="">
+            <div>
                 <Navbar/>
             </div>
-            <div className="text-center mx-auto mt-5">
-                <h4 className="mt-5"> <span className="fs-1 text-danger">404!</span></h4>
-                <h5>Page is not found</h5>
-                <Link to='/'> <button className="btn  btn-outline-info mt-1">Go Back</button></Link>
+            <div className="d-flex align-items-center justify-content-center text-center" style={   {height:"100vh"}}>
+                <div>
+                    <h1 className="display-1 text-danger">404!</h1>
+                    <p className="lead ">Page Not Found</p>
+                    <button onClick={goBack} className="btn btn-primary"  to="/"><FontAwesomeIcon className="mr-2" icon={faArrowLeft}/> Go Back </button>
+                </div>
             </div>
         </div>
     );

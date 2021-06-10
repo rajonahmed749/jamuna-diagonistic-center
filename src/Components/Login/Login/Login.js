@@ -4,6 +4,7 @@ import firebase from "firebase/app";
 import { UserContext } from '../../../App';
 import { useHistory, useLocation } from 'react-router-dom';
 import firebaseConfig from './firebaseConfig';
+import "firebase/auth";
 
 const Login = () => {
   const [loggedInUser, setLoggedInUser] = useContext(UserContext );
@@ -17,10 +18,33 @@ const Login = () => {
   }
 
   const handleGoogleSignIn = () => {
-    var provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    // firebase.auth()
+    // .signInWithPopup(provider)
+    // .then((result) => {
+    //   /** @type {firebase.auth.OAuthCredential} */
+    //   var credential = result.credential;
+  
+    //   // This gives you a Google Access Token. You can use it to access the Google API.
+    //   var token = credential.accessToken;
+    //   // The signed-in user info.
+    //   var user = result.user;
+    //   // ...
+    // }).catch((error) => {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
     
     firebase.auth().signInWithPopup(provider).then(function (result) {
       const { displayName, email } = result.user;
+      console.log("loogin user",result.user);
       const signedInUser = { name: displayName, email }
       setLoggedInUser(signedInUser);
       storeAuthToken();
@@ -29,6 +53,7 @@ const Login = () => {
       console.log(errorMessage);
     });
   }
+
   const storeAuthToken = () => {
     firebase.auth().currentUser.getIdToken(true)
       .then(function (idToken) {

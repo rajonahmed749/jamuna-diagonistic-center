@@ -16,29 +16,44 @@ Modal.setAppElement('#root');
 
 const AppointmentForm = ({modalIsOpen , closeModal, appointmentOn, date}) => {
     const { register, handleSubmit,formState: { errors } } = useForm();
-    const onSubmit = data =>{
-        console.log(data);
-        closeModal()
-        //  data.service =appointmentOn;
-        //  data.date = date;
-        //  data.created = new Date();
 
-        // fetch('http://localhost:5000/addAppointment', {
-        //     method: 'POST',
-        //     headers: {'Content-Type': 'application/json'},
-        //     body: JSON.stringify(data)
-        // })
-        // .then(res => res.json())
-        // .then(success =>{
-        //     if(success){
-        //         alert("connceted successfully");
-        //         closeModal();   
-        //     }
-        // })
-        // .catch((error) => {
-        //     console.error('Error:', error);
-        //   });
-        
+    const onSubmit = data =>{
+        data.service = appointmentOn;
+        data.date = date;
+        data.created = new Date()
+        console.log(data);
+
+        const getCircularReplacer = () => {
+            const seen = new WeakSet();
+            return (key, value) => {
+              if (typeof value === "object" && value !== null) {
+                if (seen.has(value)) {
+                  return;
+                }
+                seen.add(value);
+              }
+              return value;
+            };
+          };
+          
+        //   JSON.stringify(circularReference, getCircularReplacer());
+
+            fetch("http://localhost:4000/addAppointment", {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data, getCircularReplacer())
+            })
+            .then(res => res.json())
+            .then(success =>{
+                if(success){
+                    alert("Appointment Created  successfully");
+                    closeModal(); 
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+                    
         
 }
     return (

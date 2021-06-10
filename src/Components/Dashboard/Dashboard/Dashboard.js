@@ -5,6 +5,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { UserContext } from '../../../App';
 import Navbar from '../../Shared/Navbar/Navbar';
+import AppointmentsByDate from '../AppointmentsByDate/AppointmentsByDate';
 
 const containerStyle = {
     backgroundColor: "#F4FDFB",
@@ -13,23 +14,25 @@ const containerStyle = {
 
 const Dashboard = () => {
     // const [loggedInUser, setLoggedInUser] = useContext(UserContext)
-    // const [selectedDate, setSelectedDate] = useState(new Date());
-    // const [appointments, setAppointments] = useState([]);
+    const [selectedDate, setSelectedDate] = useState(new Date());
+    const [appointments, setAppointments] = useState([]);
 
-    // const handleDateChange = date => {
-    //     setSelectedDate(date);
-    // }
+    const handleDateChange = date => {
+        setSelectedDate(date);       
+    }
 
-    // useEffect( ()=> {
-    //     fetch('http://localhost:5000/appointmentsByDate', {
-    //         method: 'POST',
-    //         headers: { 'content-type': 'application/json'},
-    //         body: JSON.stringify({date: selectedDate, email: loggedInUser.email})
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data => setAppointments(data))
-    // }, [selectedDate])
-    
+    useEffect(() => {
+        fetch("http://localhost:4000/appointmentsByDate", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({date: selectedDate})
+        })
+        .then(res => res.json())
+        .then(data =>setAppointments(data))
+
+    },[selectedDate])
+
+ 
    
     return (
         <section>
@@ -42,12 +45,12 @@ const Dashboard = () => {
                 </div>
                 <div className="col-md-5 d-flex justify-content-center mt-5">
                 <Calendar
-                    // onChange={handleDateChange}
+                    onChange={handleDateChange}
                     value={new Date()}
                 />
                 </div>
                 <div className="col-md-5 mt-5">
-                    {/* <AppointmentsByDate appointments={appointments}></AppointmentsByDate> */}
+                    <AppointmentsByDate appointments={appointments}></AppointmentsByDate>
                 </div>
             </div>
         </section>

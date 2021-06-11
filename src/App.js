@@ -11,6 +11,8 @@ import NoFound from './Components/Home/NoFound/NoFound';
 import Dashboard from './Components/Dashboard/Dashboard/Dashboard';
 import Appointment from './Components/Appointment/Appointment/Appointment';
 import Login from './Components/Login/Login/Login';
+import DoctorDashboard from './Components/Dashboard/DoctorDashboard/DoctorDashboard';
+import Patients from './Components/Dashboard/Patients/Patients';
 
 
 
@@ -30,6 +32,12 @@ function App() {
           </Route>
           <Route path="/dashboard">
             <Dashboard/>
+          </Route>
+          <Route path="/doctor/dashboard">
+            <DoctorDashboard/>
+          </Route>
+          <Route  path="/doctor/patients">
+            <Patients/>
           </Route>
           <Route path="/blog">
             <NoFound/>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
+import DashboradStatic from "./DashboradStatic"
 
 const DoctorDashboard = () => {
     const containerStyle = {
@@ -18,7 +19,7 @@ const DoctorDashboard = () => {
                     <Sidebar/>
                 </div>
                 <div className="col-md-5 d-flex justify-content-center mt-5">
-                    <h4>there wiill be a dashboard</h4>
+                    <DashboradStatic/>
                 </div>
                 <div className="col-md-5 mt-5">
                     
